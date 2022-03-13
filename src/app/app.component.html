@@ -4,10 +4,17 @@
     <app-cmp-input class="cmp-input" #input (btnClick)="adicionar($event)"></app-cmp-input>
   </div>
   
-  <app-cmp-lista (btnClickEvent)="deletarTarefa($event)" #lista></app-cmp-lista>
+  <app-cmp-lista (btnClickEvent)="deletarTarefa($event)" (btnClickChange)="getIndice($event)" #lista></app-cmp-lista>
 
-  <div class="div-app">
+  <div class="div-app" *ngIf="toggle; else form">
     <p class="paragrafo-app" #quantidade>You have {{lista.quantidade}} pending tasks</p>
     <button botao largura="90px" class="botao-app" (click)="limparLista()">Clear All</button>
   </div>
+  <ng-template #form>
+    <form class="form-app">
+      <input inputApp placeholder="Altere o valor aqui" #alteracao>
+      <button botao bg="#1b4332" largura="70px"class="botao-app" (click)="alterarDados()">Alterar</button>
+      <button botao bg="#E64D3C" largura="70px"class="botao-app" (click)="toggle = !toggle">Cancelar</button>
+    </form>
+  </ng-template>
 </main>

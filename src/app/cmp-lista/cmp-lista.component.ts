@@ -17,13 +17,20 @@ export class CmpListaComponent implements OnInit {
   btnClickEvent: EventEmitter<any> = new EventEmitter<any>()
 
   @Output()
-  listEvent: EventEmitter<any> = new EventEmitter<any>()
+  btnClickChange: EventEmitter<any> = new EventEmitter<any>()
+
+  // @Output()
+  // listEvent: EventEmitter<any> = new EventEmitter<any>()
 
 
 
 
-  emitirEvento(indice: any) {
+  emitirEvento(indice: number) {
     this.btnClickEvent.emit(indice)
+  }
+
+  emitirEventoAlterar(indice: number){
+    this.btnClickChange.emit(indice)
   }
 
   

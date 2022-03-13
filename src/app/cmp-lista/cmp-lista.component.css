@@ -1,5 +1,5 @@
 .ul-lista{
-    width: 350px;
+    width: 390px;
     padding: 0;
 }
 
@@ -17,10 +17,14 @@
 
 .lista-botao{
     position: relative;
-    border-radius: 0px 5px 5px 0px;
     top: -9px;
     left: 9px;
     transition: width .3s ease-in-out;
     
+}
+
+.botao-apagar{
+    border-radius: 0px 5px 5px 0px;
+
 }
 

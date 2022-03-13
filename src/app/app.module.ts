@@ -8,13 +8,15 @@ import { MaterialModule } from './material.modules';
 import { FormsModule } from '@angular/forms';
 import { DiretivaBotaoDirective } from './diretiva-botao.directive';
 import { CmpInputComponent } from './cmp-input/cmp-input.component';
+import { DiretivaInputDirective } from './diretiva-input.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     CmpListaComponent,
     DiretivaBotaoDirective,
-    CmpInputComponent
+    CmpInputComponent,
+    DiretivaInputDirective
   ],
   imports: [
     BrowserModule,
