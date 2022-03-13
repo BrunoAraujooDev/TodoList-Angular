@@ -1,0 +1,26 @@
+.ul-lista{
+    width: 350px;
+    padding: 0;
+}
+
+.item-lista{
+    list-style: none;
+    height: 25px;
+    background-color: #F2F2F2;
+    padding: 10px;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+
+}
+
+.lista-botao{
+    position: relative;
+    border-radius: 0px 5px 5px 0px;
+    top: -9px;
+    left: 9px;
+    transition: width .3s ease-in-out;
+    
+}
+

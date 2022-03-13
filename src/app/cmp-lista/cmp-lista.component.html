@@ -1,0 +1,18 @@
+<ul class="ul-lista" >
+    <ng-container >
+
+        <li *ngFor="let item of lista; let valor = index" class="item-lista" (mouseover)="valor == valor ? toggle.style.display = 'block' : toggle.style.display = 'none'" (mouseout)="toggle.style.display = 'none'"> 
+            {{item}}
+            <button 
+                botao 
+                bg="#E64D3C"
+                largura="50px" 
+                class="lista-botao"
+                [ngStyle]=" {display: 'none'}"
+                #toggle
+                (click)="emitirEvento(valor)"
+                ><mat-icon >delete</mat-icon>
+            </button>
+        </li>
+    </ng-container>
+</ul>
