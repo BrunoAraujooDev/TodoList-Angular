@@ -10,7 +10,7 @@ import { CmpListaComponent } from './cmp-lista/cmp-lista.component';
 export class AppComponent  {
   title = 'projectToDoList';
 
-  toggle: boolean = false;
+  toggle: boolean = true;
   indice!: number 
 
   @ViewChild('alteracao')
