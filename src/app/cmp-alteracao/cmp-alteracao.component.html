@@ -9,14 +9,14 @@
   </div>
   <ng-template #form>
     <form class="form-app">
-      <input inputApp placeholder="Altere o valor aqui" #alteracao>
+      <input inputApp [placeholder]="placeholder" #alteracao>
       <button 
         botao 
         bg="#40916c" 
         largura="70px"
         class="botao-app" 
         (click)="acceptEvent()">
-        Alterar
+        Change
     </button>
       <button 
         botao 
@@ -24,7 +24,7 @@
         largura="70px"
         class="botao-app" 
         (click)="toggle = !toggle">
-      Cancelar
+      Cancel
     </button>
     </form>
   </ng-template>

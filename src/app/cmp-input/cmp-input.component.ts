@@ -7,6 +7,8 @@ import { Component, EventEmitter,  Output, ViewChild, ElementRef } from '@angula
 })
 export class CmpInputComponent {
 
+  erro: boolean = false;
+
   @ViewChild('texto')
   texto!: ElementRef
 

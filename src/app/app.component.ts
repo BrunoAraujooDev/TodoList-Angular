@@ -25,10 +25,15 @@ export class AppComponent  {
 
 
   adicionar(task: string): void{
-    this.list.lista.push(task)
-    localStorage.setItem('atividades', JSON.stringify(this.list.lista))
-    this.list.quantidade = this.list.lista.length
-    this.input.texto.nativeElement.value = ''
+    if(task){
+      this.list.lista.push(task)
+      localStorage.setItem('atividades', JSON.stringify(this.list.lista))
+      this.list.quantidade = this.list.lista.length
+      this.input.texto.nativeElement.value = ''
+      this.input.erro = false;
+    } else {
+        this.input.erro = true;
+    }
   }
   
   deletarTarefa(indice: number){
@@ -46,6 +51,8 @@ export class AppComponent  {
   getIndice(indice: number){
     this.indice = indice
     this.change.toggle = !this.change.toggle
+    console.log(this.list.lista[indice])
+    this.change.placeholder = this.list.lista[indice]
   }
 
   alterarDados():void{

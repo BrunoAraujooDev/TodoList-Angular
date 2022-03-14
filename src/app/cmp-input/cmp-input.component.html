@@ -1,2 +1,3 @@
-<input inputApp placeholder="Add your new todo" #texto>
+<input inputApp [placeholder]="erro ? 'Insert a task':'Add your new todo'" [ngStyle]=" {borderColor:  erro ? 'red':'#eee'} " #texto>
 <button botao class="botao-input" (click)="emitirTarefa(texto.value)" ><mat-icon>add</mat-icon></button>
+

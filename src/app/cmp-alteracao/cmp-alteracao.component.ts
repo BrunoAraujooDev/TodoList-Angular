@@ -12,6 +12,8 @@ export class CmpAlteracaoComponent {
   @ViewChild('alteracao')
   alteracao!: ElementRef
 
+  placeholder: string = ''
+
   @Output()
   btnAcceptChangeEvent: EventEmitter<any> = new EventEmitter<any>()
 
