@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { DiretivaBotaoDirective } from './diretiva-botao.directive';
 import { CmpInputComponent } from './cmp-input/cmp-input.component';
 import { DiretivaInputDirective } from './diretiva-input.directive';
+import { CmpAlteracaoComponent } from './cmp-alteracao/cmp-alteracao.component';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { DiretivaInputDirective } from './diretiva-input.directive';
     CmpListaComponent,
     DiretivaBotaoDirective,
     CmpInputComponent,
-    DiretivaInputDirective
+    DiretivaInputDirective,
+    CmpAlteracaoComponent,
   ],
   imports: [
     BrowserModule,

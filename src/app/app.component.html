@@ -1,20 +1,24 @@
 <main class="main">
   <h1 class="titulo-app">Todo App</h1>
   <div class="div-app">
-    <app-cmp-input class="cmp-input" #input (btnClick)="adicionar($event)"></app-cmp-input>
+    <app-cmp-input 
+      class="cmp-input" 
+      #input 
+      (btnClick)="adicionar($event)">
+    </app-cmp-input>
   </div>
-  
-  <app-cmp-lista (btnClickEvent)="deletarTarefa($event)" (btnClickChange)="getIndice($event)" #lista></app-cmp-lista>
-
-  <div class="div-app" *ngIf="toggle; else form">
-    <p class="paragrafo-app" #quantidade>You have {{lista.quantidade}} pending tasks</p>
-    <button botao largura="90px" class="botao-app" (click)="limparLista()">Clear All</button>
-  </div>
-  <ng-template #form>
-    <form class="form-app">
-      <input inputApp placeholder="Altere o valor aqui" #alteracao>
-      <button botao bg="#40916c" largura="70px"class="botao-app" (click)="alterarDados()">Alterar</button>
-      <button botao bg="#E64D3C" largura="70px"class="botao-app" (click)="toggle = !toggle">Cancelar</button>
-    </form>
-  </ng-template>
+  <app-cmp-lista 
+      (btnClickEvent)="deletarTarefa($event)" 
+      (btnClickChange)="getIndice($event)" 
+      #lista>
+  </app-cmp-lista>
+  <app-cmp-alteracao 
+      class="div-app" 
+      (btnCleanList)="limparLista()" 
+      (btnAcceptChangeEvent)="alterarDados()" 
+      #change>
+      <p class="paragrafo-app" #quantidade>
+        You have {{lista.quantidade}} pending tasks
+      </p>
+  </app-cmp-alteracao>
 </main>

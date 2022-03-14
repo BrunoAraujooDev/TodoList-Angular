@@ -1,0 +1,30 @@
+<div class="div-app" *ngIf="toggle; else form">
+    <ng-content></ng-content>
+    <button 
+        botao largura="90px" 
+        class="botao-app" 
+        (click)="aceitarLimpeza()">
+        Clear All
+    </button>
+  </div>
+  <ng-template #form>
+    <form class="form-app">
+      <input inputApp placeholder="Altere o valor aqui" #alteracao>
+      <button 
+        botao 
+        bg="#40916c" 
+        largura="70px"
+        class="botao-app" 
+        (click)="acceptEvent()">
+        Alterar
+    </button>
+      <button 
+        botao 
+        bg="#E64D3C" 
+        largura="70px"
+        class="botao-app" 
+        (click)="toggle = !toggle">
+      Cancelar
+    </button>
+    </form>
+  </ng-template>

@@ -1,4 +1,4 @@
-.main{
+.main {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,36 +9,22 @@
     font-family: "Poppins";
 }
 
-.titulo-app{
+.titulo-app {
     width: 100%;
     margin: 0;
 }
 
-.div-app{
+.div-app {
     width: 100%;
     display: flex;
-    margin-top: 1.5rem ;
+    margin-top: 1.5rem;
 }
 
-.cmp-input{
+.cmp-input {
     display: flex;
-    width: 100%;
-}
-
-
-
-.botao-app{
-    border-radius: 5px;
-    font-weight: 700;
-    margin-left: 5px;
-} 
-
-.form-app{
-    display: flex;
-    justify-content: space-between;
     width: 100%;
 }
 
-.paragrafo-app{
+.paragrafo-app {
     flex: 1;
 }

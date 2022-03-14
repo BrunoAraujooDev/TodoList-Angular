@@ -1,4 +1,5 @@
-import { Component, ElementRef, OnChanges, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { CmpAlteracaoComponent } from './cmp-alteracao/cmp-alteracao.component';
 import { CmpInputComponent } from './cmp-input/cmp-input.component';
 import { CmpListaComponent } from './cmp-lista/cmp-lista.component';
 
@@ -10,12 +11,7 @@ import { CmpListaComponent } from './cmp-lista/cmp-lista.component';
 export class AppComponent  {
   title = 'projectToDoList';
 
-  toggle: boolean = true;
   indice!: number 
-
-  @ViewChild('alteracao')
-  correcao!: ElementRef
-
 
   @ViewChild('input')
   input!: CmpInputComponent
@@ -23,10 +19,12 @@ export class AppComponent  {
   @ViewChild('lista')
   list!: CmpListaComponent
 
+  @ViewChild('change')
+  change!: CmpAlteracaoComponent
+
 
 
   adicionar(task: string): void{
-
     this.list.lista.push(task)
     localStorage.setItem('atividades', JSON.stringify(this.list.lista))
     this.list.quantidade = this.list.lista.length
@@ -34,11 +32,9 @@ export class AppComponent  {
   }
   
   deletarTarefa(indice: number){
-    
     this.list.lista.splice(indice,1)
     this.list.quantidade = this.list.lista.length
     localStorage.setItem('atividades', JSON.stringify(this.list.lista))
-
   }
 
   limparLista():void{
@@ -49,13 +45,13 @@ export class AppComponent  {
 
   getIndice(indice: number){
     this.indice = indice
-    this.toggle = !this.toggle
+    this.change.toggle = !this.change.toggle
   }
 
   alterarDados():void{
-    this.list.lista[this.indice] = this.correcao.nativeElement.value
+    this.list.lista[this.indice] = this.change.alteracao.nativeElement.value
     localStorage.setItem('atividades', JSON.stringify(this.list.lista))
-    this.toggle = !this.toggle
+    this.change.toggle = !this.change.toggle
   }
 
   

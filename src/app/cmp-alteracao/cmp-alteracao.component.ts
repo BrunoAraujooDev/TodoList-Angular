@@ -1,0 +1,29 @@
+import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
+
+@Component({
+  selector: 'app-cmp-alteracao',
+  templateUrl: './cmp-alteracao.component.html',
+  styleUrls: ['./cmp-alteracao.component.css']
+})
+export class CmpAlteracaoComponent {
+
+  toggle: boolean = true;
+
+  @ViewChild('alteracao')
+  alteracao!: ElementRef
+
+  @Output()
+  btnAcceptChangeEvent: EventEmitter<any> = new EventEmitter<any>()
+
+  @Output()
+  btnCleanList: EventEmitter<any> = new EventEmitter<any>()
+
+  acceptEvent(): void {
+    this.btnAcceptChangeEvent.emit();
+  }
+
+  aceitarLimpeza(): void {
+    this.btnCleanList.emit();
+  }
+
+}

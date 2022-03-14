@@ -18,23 +18,7 @@ export class CmpListaComponent implements OnInit {
 
   @Output()
   btnClickChange: EventEmitter<any> = new EventEmitter<any>()
-
-  // @Output()
-  // listEvent: EventEmitter<any> = new EventEmitter<any>()
-
-
-
-
-  emitirEvento(indice: number) {
-    this.btnClickEvent.emit(indice)
-  }
-
-  emitirEventoAlterar(indice: number){
-    this.btnClickChange.emit(indice)
-  }
-
   
-
   ngOnInit(): void {
     this.listaLocal = localStorage.getItem('atividades');
 
@@ -43,9 +27,12 @@ export class CmpListaComponent implements OnInit {
     this.quantidade = this.lista.length
   }
 
+  emitirEvento(indice: number) {
+    this.btnClickEvent.emit(indice)
+  }
 
-  
-
-  // ['Buy a new gaming laptop', 'Complete a previous task', 'Create video for Youtube', 'Create a new portfolio site']
+  emitirEventoAlterar(indice: number){
+    this.btnClickChange.emit(indice)
+  }
 
 }

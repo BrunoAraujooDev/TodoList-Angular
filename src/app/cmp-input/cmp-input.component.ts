@@ -7,8 +7,8 @@ import { Component, EventEmitter,  Output, ViewChild, ElementRef } from '@angula
 })
 export class CmpInputComponent {
 
-@ViewChild('texto')
-texto!: ElementRef
+  @ViewChild('texto')
+  texto!: ElementRef
 
   @Output()
  btnClick: EventEmitter<any> = new EventEmitter<any>()
