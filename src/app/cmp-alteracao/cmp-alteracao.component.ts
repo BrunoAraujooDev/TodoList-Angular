@@ -8,6 +8,7 @@ import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular
 export class CmpAlteracaoComponent {
 
   toggle: boolean = true;
+  erro: boolean = false;
 
   @ViewChild('alteracao')
   alteracao!: ElementRef

@@ -14,6 +14,7 @@
         [placeholder]="placeholder" 
         #alteracao 
         (keyup.enter)="acceptEvent()"
+        [ngStyle]=" {borderColor:  erro ? 'red':'#eee'}"
       >
       <button 
         botao 

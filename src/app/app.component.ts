@@ -56,9 +56,15 @@ export class AppComponent  {
   }
 
   alterarDados():void{
-    this.list.lista[this.indice] = this.change.alteracao.nativeElement.value
-    localStorage.setItem('atividades', JSON.stringify(this.list.lista))
-    this.change.toggle = !this.change.toggle
+    if(this.change.alteracao.nativeElement.value){
+      this.list.lista[this.indice] = this.change.alteracao.nativeElement.value
+      localStorage.setItem('atividades', JSON.stringify(this.list.lista))
+      this.change.toggle = !this.change.toggle
+      this.change.erro = false;
+    } else {
+      this.change.erro = true;
+    }
+    
   }
 
   
