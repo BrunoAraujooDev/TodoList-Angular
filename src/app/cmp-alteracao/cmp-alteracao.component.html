@@ -9,7 +9,12 @@
   </div>
   <ng-template #form>
     <form class="form-app">
-      <input inputApp [placeholder]="placeholder" #alteracao>
+      <input 
+        inputApp 
+        [placeholder]="placeholder" 
+        #alteracao 
+        (keyup.enter)="acceptEvent()"
+      >
       <button 
         botao 
         bg="#40916c" 
